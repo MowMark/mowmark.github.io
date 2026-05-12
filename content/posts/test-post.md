@@ -8,7 +8,7 @@ showFullContent: false
 readingTime: false
 hideComments: false
 categories: ["linux"]
-draft: true
+draft: false
 ---
 
 测试文章
