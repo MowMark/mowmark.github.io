@@ -1,0 +1,107 @@
+baseURL = 'https://mowmark.github.io/'
+# baseURL = 'http://localhost:1313/'
+languageCode = 'zh-cn'
+title = 'MowMark 的个人博客'
+theme = 'hugo-theme-stack'
+paginate = 8
+enableEmoji = true
+
+[author]
+  name = "MowMark"
+  intro = "在读研一, 喜欢折腾, 正在学习SLAM算法中"
+
+[params]
+  # 文章在 content/posts/ 下, 填"posts"
+  mainSections = ["posts"]
+
+  # 网站的 meta description
+  description = "MowMark 的个人技术博客"
+  
+  # 侧边栏头像下方的小标语
+  subtitle = "Stay hungry, stay foolish."
+
+  # 侧边栏名字旁边的装饰性 Emoji
+  sidebarMenuLabel = "菜单"
+
+  [params.sidebar]
+    emoji = "🍦"
+    subtitle = "折腾与学习记录"
+    avatar = "img/avatar.png"    
+
+  [params.article]
+    math = true
+    toc = true
+    readingTime = true
+
+    [params.article.license]
+      enabled = true
+      licenseNote = '本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 协议授权'
+    
+  [params.dateFormat]
+    published = "2006-01-02"
+    lastUpdated = "2006-01-02 15:04"
+
+  [params.widget]
+    homepage = ["search", "archives", "categories", "tagCloud"]
+    article = ["toc"]
+
+  [params.comments]
+    enabled = false
+    provider = "giscus"
+
+    [params.comments.giscus]
+      repo = ""
+      repoId = ""
+      category = ""
+      categoryId = ""
+      mapping = "pathname"
+      theme = "preferred_color_scheme"
+
+[[menu.main]]
+  identifier = "home"
+  name = "首页"
+  url = "/"
+  weight = 1
+
+# 归档页（必须先完成第一步，创建了对应的 index.md 才能正常访问）
+[[menu.main]]
+  identifier = "archives"
+  name = "归档"
+  url = "/archives/"
+  weight = 2
+
+# 搜索页（同上，需要先创建 index.md）
+[[menu.main]]
+  identifier = "search"
+  name = "搜索"
+  url = "/search/"
+  weight = 3
+
+# 关于页
+[[menu.main]]
+  identifier = "about"
+  name = "关于"
+  url = "/about/"
+  weight = 4
+
+# ============================================================
+# 【Markup 配置】
+# 控制 Markdown 渲染行为
+# ============================================================
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # 允许在 Markdown 文章里直接写 HTML 代码
+      # 如果你有时会在文章里嵌入 HTML，建议开启
+      unsafe = true
+
+  # 代码高亮配置
+  [markup.highlight]
+    # 代码块是否显示行号
+    lineNos = true
+    # 代码高亮主题，其他可选项：
+    # monokai / dracula / github / vs / solarized-dark 等
+    style = "dracula"
+    # 不使用外部 CSS 文件，直接内联样式（更简单，推荐）
+    noClasses = true 
+  
